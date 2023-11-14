@@ -1,0 +1,5 @@
+jupyterlite:
+  ports:
+    - "{{ JUPYTERLITE_PORT }}:8000"
+  stdin_open: true
+  tty: true

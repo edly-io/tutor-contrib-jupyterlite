@@ -1,0 +1,2 @@
+recursive-include tutorjupyterlite/patches *
+recursive-include tutorjupyterlite/templates *

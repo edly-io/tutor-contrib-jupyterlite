@@ -1,0 +1,4 @@
+# jupyterlite
+{{ JUPYTERLITE_HOST }}{$default_site_port} {
+    import proxy "jupyterlite:8000"
+}

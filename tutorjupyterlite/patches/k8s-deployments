@@ -1,0 +1,31 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jupyterlite
+  labels:
+    app.kubernetes.io/name: jupyterlite
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: jupyterlite
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: jupyterlite
+    spec:
+      containers:
+        - name: jupyterlite
+          image: {{ JUPYTERLITE_DOCKER_IMAGE }}
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8000
+          volumeMounts:
+            - name: fss-pvc-content
+              mountPath: /jupyterlite/{{ JUPYTERLITE_CONTENT_DIR }}
+      volumes:
+        - name: fss-pvc-content
+          persistentVolumeClaim:
+            claimName: fss-pvc
+      imagePullSecrets:
+      - name: {{ IMAGE_PULL_SECRET }}
