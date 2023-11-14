@@ -15,6 +15,8 @@ Usage
 
     tutor plugins enable jupyterlite
 
+    tutor local launch
+
 
 License
 -------
