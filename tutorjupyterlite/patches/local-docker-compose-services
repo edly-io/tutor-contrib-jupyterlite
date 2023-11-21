@@ -1,0 +1,5 @@
+jupyterlite:
+  image: {{ JUPYTERLITE_DOCKER_IMAGE }}
+  volumes:
+    - ../../data/jupyterlite:/jupyterlite/{{ JUPYTERLITE_CONTENT_DIR }}
+  restart: unless-stopped
