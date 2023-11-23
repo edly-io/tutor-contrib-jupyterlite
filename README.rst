@@ -14,7 +14,7 @@ Then, to enable this plugin, run::
 
 Then, build image and launch::
 
-    tutor [dev|local] build jupyterlite
+    tutor images build jupyterlite
     tutor [dev|local] launch
     
 
