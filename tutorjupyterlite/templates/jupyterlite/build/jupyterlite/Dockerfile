@@ -10,6 +10,9 @@ RUN mkdir jupyterlite
 
 COPY requirements.txt /jupyterlite
 WORKDIR /jupyterlite
+
+{{ patch("jupyterlite-common-settings") }}
+
 RUN pip install -r requirements.txt
 
 {% if JUPYTERLITE_FULL_INSTALL %}

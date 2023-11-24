@@ -1,0 +1,3 @@
+# Add LMS settings
+CORS_ORIGIN_WHITELIST.append("https://{{ LMS_HOST }}")
+CSRF_TRUSTED_ORIGINS.append("{{ LMS_HOST }}")
