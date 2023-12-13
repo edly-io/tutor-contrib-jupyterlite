@@ -18,8 +18,8 @@ WORKDIR /jupyterlite
 RUN pip install -r requirements-full.txt
 {% endif %}
 
-ENV JUPYTERLITE_PORT 8000
-ENV JUPYTERLITE_OUTPUT_DIR dist
+ENV JUPYTERLITE_PORT=8000
+ENV JUPYTERLITE_OUTPUT_DIR=dist
 
 ENTRYPOINT [ "jupyter", "lite", "serve"]
 

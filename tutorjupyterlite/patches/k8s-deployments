@@ -23,6 +23,9 @@ spec:
           volumeMounts:
             - name: fss-pvc-content
               mountPath: /jupyterlite/{{ JUPYTERLITE_CONTENT_DIR }}
+          env:
+            - name: JUPYTERLITE_PORT
+              value: '8000'
       volumes:
         - name: fss-pvc-content
           persistentVolumeClaim:
