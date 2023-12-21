@@ -1,8 +1,7 @@
-{% if is_buildkit_enabled() %}# syntax=docker/dockerfile:1.4{% endif %}
 From {{ JUPYTERLITE_BASE_DOCKER_IMAGE }}
 
-RUN {% if is_buildkit_enabled() %}--mount=type=cache,target=/var/cache/apt,sharing=locked \
-    --mount=type=cache,target=/var/lib/apt,sharing=locked{% endif %} \ 
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \ 
     apt update && \
     apt install -y build-essential
 
